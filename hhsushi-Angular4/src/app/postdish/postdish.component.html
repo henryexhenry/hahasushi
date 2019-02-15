@@ -1,0 +1,96 @@
+<p>
+    postdish works!
+</p>
+
+<div class="row row-content justify-content-center" style="padding-top: 50px;margin-bottom:100px; background-color: black">
+    <div class="col-8 col-lg-6">
+        <div class="col-12 row justify-content-center">
+            <h3>Post Dish</h3>
+        </div>
+        <br>
+        <div class="col-10">
+            <form novalidate [formGroup]="postDishForm" #pdform="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>English dish name</label>
+                    <input type="text" class="form-control {{(formErrors.name_eng) ? 'is-invalid':''}}" id="name_eng" formControlName="name_eng"
+                        placeholder="English Dish Name" required>
+                    <div class="invalid-feedback">{{formErrors.name_eng}}</div>
+                </div>
+                <div class="form-group">
+                    <label>Chinese dish name</label>
+                    <input type="text" class="form-control {{(formErrors.name_cn) ? 'is-invalid':''}}" id="name_cn" formControlName="name_cn" placeholder="Chinese Dish Name" required>
+                    
+                    <div class="invalid-feedback">{{formErrors.name_cn}}</div>
+                </div>
+                <div class="form-group">
+                    <label>Japanese dish name</label>
+                    <input type="text" class="form-control {{(formErrors.name_jp) ? 'is-invalid':''}}" id="name_jp" formControlName="name_jp" placeholder="Japanese Dish Name" required>
+                    
+                    <div class="invalid-feedback">{{formErrors.name_jp}}</div>
+                </div>
+                <div class="form-group">
+                    <label>Description (Optional)</label>
+                    <input type="text" class="form-control" id="description" formControlName="description" placeholder="description">
+                </div>
+                <div class="form-group">
+                    <label>Dish image (Optional)</label>
+                    <input type="text" class="form-control" id="image" formControlName="image" placeholder="images/image_sushi_00">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="categories">Category</label>
+                    <select class="form-control {{(formErrors.category) ? 'is-invalid':''}}" id="category" formControlName="category">
+                        <option>sushi</option>
+                        <option>sashimi</option>
+                        <option>gunkan</option>
+                        <option>roll</option>
+                        <option>handroll</option>
+                        <option>bowl</option>
+                        <option>fried</option>
+                        <option>agemono</option>
+                        <option>salad</option>
+                    </select>
+
+                    <div class="invalid-feedback">{{formErrors.category}}</div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="label">Label (Optional)</label>
+                    <select class="form-control" id="label" formControlName="label">
+                        <option></option>
+                        <option>Recommendation</option>
+                        <option>Limited Item</option>
+                        <option>Popular Item</option>
+                        <option>Vegetarian Item</option>
+                        <option>Spicy Item</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <div class=" row justify-content-between">
+                        <div class="col-md-6">
+                            <input type="number" class="form-control  {{(formErrors.price) ? 'is-invalid':''}}" id="price" formControlName="price" placeholder="price" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="unit" formControlName="unit" value="/(1件/pc/貫)" placeholder="/(1件/pc/貫)">
+                        </div>
+
+                    <div class="invalid-feedback">{{formErrors.price}}</div>
+                    </div>
+
+                </div>
+
+                <div class="form-group row justify-content-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="postDishForm.invalid">
+                        Submit
+                    </button>
+                </div>
+                <div>{{postDishForm.value | json}}</div>
+            </form>
+        </div>
+    </div>
+</div>

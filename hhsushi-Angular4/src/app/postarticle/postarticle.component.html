@@ -1,0 +1,48 @@
+<div class="row row-content justify-content-center" style="padding-top: 100px;margin-bottom:100px; background-color: black">
+    <div class="col-8 col-lg-6">
+        <div class="col-12 row justify-content-center">
+            <h3>Edit your Article!</h3>
+        </div>
+        <br>
+        <div class="col-12">
+            <form novalidate [formGroup]="articleForm" #atform="ngForm" (ngSubmit)="onSubmit()" class="col-12 form-group">
+                
+                <div class="form-group row justify-content-center">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" formControlName="title" id="title" placeholder="title" required>
+                        <div class="invalid-feedback">{{formErrors.title}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" formControlName="author" id="author" placeholder="author" required>
+                        <div class="invalid-feedback">{{formErrors.author}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group row justify-content-center">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" formControlName="coverImage" id="coverImage" placeholder="coverImage" required>
+                        <div class="invalid-feedback">{{formErrors.coverImage}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" formControlName="quotedFrom" id="quotedFrom" placeholder="quotedFrom">
+                        <div class="invalid-feedback">{{formErrors.quotedFrom}}</div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-12">
+                        <editor [init]="{plugins: 'link', branding: false, menubar: false, min_height: 300}" formControlName="content"></editor>
+                        <div class="invalid-feedback">{{formErrors.content}}</div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row justify-content-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <p>{{articleForm.value | json}}</p>
+        </div>
+
+    </div>
+</div>

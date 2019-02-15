@@ -1,0 +1,21 @@
+<p>
+    article works!
+</p>
+<div class="container row justify-content-center" *ngIf="article">
+    <h3 class="col-12 article-title">{{article.title}}</h3>
+    <div class="meta-data">
+        <span>{{article.createdAt | date}}</span>
+        <span>, &nbsp; by {{article.author}}</span>
+    </div>
+    <article class="row justify-content-center" style="margin-top:50px; margin-bottom:100px;">
+        <div class="col-12 col-md-10 col-lg-8">
+            <div class="col-12 coverImage-container" [ngStyle]="{'background': imageURL}" style="background-size:contain">
+            </div>
+            <div id="content" [innerHTML]="article.content"></div>
+        </div>
+        <div class="col-12" *ngIf="article.quotedFrom" style="text-align:center; margin-top:50px">
+            (本文转载自：{{article.quotedFrom}})
+        </div>
+    </article>
+</div>
+<!--/assets/{{article.coverImage}}.jpg-->

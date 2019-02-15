@@ -1,0 +1,25 @@
+.background{
+    background-image: url(../../assets/images/bg_body.jpg);
+    background-position: left top;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.link-btn{
+    padding: 6px;
+    margin:0px 20%;
+    border: solid 1px transparent;
+}
+.link-btn:hover{
+    border: solid 1px white;
+    cursor: pointer;
+    color:white;
+}
+
+.bg-footer{
+    padding:60px 0px;
+    background-image: url("/assets/images/bg_2.jpg");
+    background-position: center;
+    background-size: cover;
+}

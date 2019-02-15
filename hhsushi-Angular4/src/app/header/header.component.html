@@ -1,0 +1,31 @@
+<!--
+<mat-toolbar fxLayout="row">
+    <div class="container" fxFlexOffset="15" fxFlex="70">
+
+        <span fxFlex fxLayoutAlign="start center">Harvest house sushi</span>
+        <button class="nav_btn" routerLink="/home">HOME</button>
+        <button class="nav_btn" routerLink="/aboutus">ABOUT</button>
+        <button class="nav_btn" routerLink="/menu">MENU</button>
+        <button class="nav_btn" routerLink="/contact">CONTACT</button>
+
+    </div>
+</mat-toolbar>
+-->
+<nav class="navbar navbar-dark bg-dark navbar-inverse navbar-expand-md">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../assets/images/harvestHouse.jpg" height="60"></a>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" routerLink="/home" routerLinkActive="active"> Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus" routerLinkActive="active"> About</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/menu" routerLinkActive="active"> Menu</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active"> Contact</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/postdish" routerLinkActive="active"> postdish</a></li>
+                <li class="nav-item"><a class="nav-link" href="/postarticle"> postarticle</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
